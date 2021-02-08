@@ -1,0 +1,15 @@
+# check https://nfpm.goreleaser.com/configuration for detailed usage
+#
+name: "haproxy_exporter"
+arch: "amd64"
+platform: "linux"
+section: "default"
+priority: "extra"
+maintainer: "Guillaume Bienkowski <gbi@braincube.com>"
+description: Haproxy exporter queries the haproxy stats page and exposes prometheus metrics 
+vendor: "Myself"
+homepage: "https://github.com/Gui13/haproxy_exporter"
+license: "Apache"
+files:
+  ./haproxy_exporter: "/usr/local/bin/haproxy_exporter"
+version: 0.12.0
