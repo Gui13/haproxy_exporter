@@ -26,3 +26,9 @@ PROMTOOL ?= docker run -i --rm -w "$(PWD)" -v "$(PWD):$(PWD)" --entrypoint promt
 checkmetrics:
 	@echo ">> checking metrics for correctness"
 	for file in test/*.metrics; do $(PROMTOOL) check metrics < $$file || exit 1; done
+
+
+.PHONY: deb
+deb:
+	mkdir -p dist
+	nfpm pkg --config nfpm.yml --target dist/ --packager deb
